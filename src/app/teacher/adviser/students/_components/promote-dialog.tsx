@@ -117,12 +117,12 @@ function PromoteDialog({
             }));
 
         // Only include MAPEH main entry if all components are present
-        const mapehEntry: MapehMainSubject | null = sortedMapehComponents.length === orderedComponents.length
+        const mapehEntry: MapehMainSubject | null = mapehId && sortedMapehComponents.length === orderedComponents.length
             ? {
-                _id: mapehId,
-                subjectName: "MAPEH",
-                grades: mapehAverage,
-                isMapehMain: true
+            _id: mapehId,
+            subjectName: "MAPEH",
+            grades: mapehAverage,
+            isMapehMain: true
             }
             : null;
         // Return organized subjects with MAPEH and its components at the bottom
