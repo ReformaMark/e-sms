@@ -9,12 +9,12 @@ import { useQuery } from 'convex/react';
 import { api } from '../../../../../../convex/_generated/api';
 import DropDialog from './drop-dialog';
 
-interface ActionCeilProps {
+interface ActionCellProps {
     student: SectionStudentsType
 }
 function ActionCell({
     student
-}: ActionCeilProps) {
+}: ActionCellProps) {
     const enrolled = useQuery(api.enrollment.isEnrolled, {
         enrollmentId: student.enrollment?._id
     })
@@ -45,11 +45,11 @@ function ActionCell({
                 </DropdownMenuContent>
             </DropdownMenu>
         
-            <PromoteDialog
+            {/* <PromoteDialog
                 student={student}
                 promoteDialog={promoteDialog}
                 setPromoteDialog={setPromoteDialog}
-            />
+            /> */}
 
             <DropDialog
                 student={student}

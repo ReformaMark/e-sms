@@ -1,7 +1,6 @@
 'use client'
 import { useQuery } from 'convex/react'
 import React, { useEffect, useState } from 'react'
-import { api } from '../../../../../../convex/_generated/api'
 import { useSearchParams } from 'next/navigation';
 import { Id } from '../../../../../../convex/_generated/dataModel';
 import { useRouter } from 'next/navigation';
@@ -12,9 +11,9 @@ import { ColumnDef } from '@tanstack/react-table';
 import { SectionStudentsType } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
-import ActionCeil from './action-cell';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import ActionCell from './action-cell';
 
 export default function StudentList() {
     const router = useRouter()
@@ -107,7 +106,7 @@ const studentColumns: ColumnDef<SectionStudentsType>[] = [
       id: "actions",
       cell: ({ row }) => {
         const student = row.original
-        return(<></>)
+        return(<ActionCell student={student}/>)
       }
 
     }
