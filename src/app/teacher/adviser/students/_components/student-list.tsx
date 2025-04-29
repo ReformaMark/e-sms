@@ -107,7 +107,7 @@ const studentColumns: ColumnDef<SectionStudentsType>[] = [
       id: "actions",
       cell: ({ row }) => {
         const student = row.original
-        return(<ActionCeil student={student}/>)
+        return(<></>)
       }
 
     }
